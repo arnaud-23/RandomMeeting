@@ -1,0 +1,3 @@
+app_people:
+    resource: "routings/people/person.yml"
+    prefix: /people
