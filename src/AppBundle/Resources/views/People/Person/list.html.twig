@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Add People{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the list People page</h1>
+
+    <a href="{{ path('rm_people_add') }}">
+        <button>Add new</button>
+    </a>
+
+    <table>
+        <tr>
+            <td>id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+        </tr>
+        {% for person in people %}
+            <tr>
+                <td>{{ person.id }}</td>
+                <td>{{ person.firstName }}</td>
+                <td>{{ person.lastName }}</td>
+                <td>{{ person.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ path('rm_people_add') }}">
+        <button>Add new</button>
+    </a>
+{% endblock %}
