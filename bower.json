@@ -1,0 +1,21 @@
+{
+    "name": "RandomMeeting",
+    "homepage": "https://github.com/arnaud-23/RandomMeeting",
+    "authors": [
+        "arnaud-23 <arnaud.h.lefevre@gmail.com>"
+    ],
+    "description": "RandomMeeting",
+    "main": "",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "web/assets/vendor/",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.7"
+    }
+}
