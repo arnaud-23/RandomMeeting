@@ -15,5 +15,11 @@
                 <argument type="service" id="app.repository.people.person" />
             </call>
         </service>
+
+        <service id="app.services.team.build_random_team" class="AppBundle\Services\Team\buildRandomTeam">
+            <call method="setPersonRepository">
+                <argument type="service" id="app.repository.people.person" />
+            </call>
+        </service>
     </services>
 </container>

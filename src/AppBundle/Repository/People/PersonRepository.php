@@ -16,17 +16,31 @@ class PersonRepository extends EntityRepository
 
     /**
      * @param Person $person
-     * @param int    $numberOfResult
+     * @param int    $resultCount
      *
      * @return Person[]
      */
-    public function findRandomPerson(Person $person, $numberOfResult = 1)
+    public function findRandomWithPerson(Person $person, $resultCount = 1)
     {
         return $this->createQueryBuilder('p')
             ->where('p.id != :personId')
             ->setParameter('personId', $person->getId())
             ->orderBy('RANDOM()')
-            ->setMaxResults($numberOfResult)
+            ->setMaxResults($resultCount)
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * @param int $resultCount
+     *
+     * @return Person[]
+     */
+    public function findRandom($resultCount = 1)
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('RANDOM()')
+            ->setMaxResults($resultCount)
             ->getQuery()
             ->getResult();
     }

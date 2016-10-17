@@ -1,3 +1,10 @@
+app_site:
+    resource: "routings/site/site.yml"
+
 app_people:
     resource: "routings/people/person.yml"
     prefix: /people
+
+app_team:
+    resource: "routings/team/team.yml"
+    prefix: /teams

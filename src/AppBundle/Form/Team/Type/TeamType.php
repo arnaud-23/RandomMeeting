@@ -1,19 +1,18 @@
 <?php
 
-namespace AppBundle\Form\People\Type;
+namespace AppBundle\Form\Team\Type;
 
-use AppBundle\Form\People\Model\PersonModel;
+use AppBundle\Form\Team\Model\TeamModel;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author Arnaud Lefevre <arnaud.h.lefevre@gmail.com>
  */
-class PersonType extends AbstractType
+class TeamType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -21,10 +20,8 @@ class PersonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class)
-            ->add('firstName', TextType::class)
-            ->add('lastName', TextType::class)
-            ->add('save', SubmitType::class);
+            ->add('memberCount', NumberType::class)
+            ->add('build', SubmitType::class);
     }
 
     /**
@@ -32,6 +29,6 @@ class PersonType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(['data_class' => PersonModel::class]);
+        $resolver->setDefaults(['data_class' => TeamModel::class]);
     }
 }

@@ -1,0 +1,3 @@
+rm_team_build_random:
+    path:     /build-random
+    defaults: { _controller: AppBundle:Team/BuildRandomTeam:build }

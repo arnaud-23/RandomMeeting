@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Add People{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1>RandomMeeting</h1>
+
+        <ul>
+            <li><a href="{{ path('rm_people_list') }}">List of people</a></li>
+            <li><a href="{{ path('rm_team_build_random') }}">Build random Team</a></li>
+        </ul>
+    </div>
+{% endblock %}

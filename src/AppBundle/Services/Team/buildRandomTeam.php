@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Services\People;
+namespace AppBundle\Services\Team;
 
 use AppBundle\Entity\People\Person;
 use AppBundle\Repository\People\PersonRepository;
@@ -8,7 +8,7 @@ use AppBundle\Repository\People\PersonRepository;
 /**
  * @author Arnaud Lefevre <arnaud.h.lefevre@gmail.com>
  */
-class GetBuddies
+class buildRandomTeam
 {
     /**
      * @var PersonRepository
@@ -16,15 +16,24 @@ class GetBuddies
     private $personRepository;
 
     /**
-     * @param Person $person
-     * @param int    $number
+     * @param int $count
      *
      * @return Person[]
      */
-    public function getRandom(Person $person, $number = 1)
+    public function buildByMemberCount($count)
     {
-        return $this->personRepository->findRandomWithPerson($person, $number);
+        return $this->personRepository->findRandom($count);
     }
+
+//    /**
+//     * @param int $count
+//     *
+//     * @return Person[]
+//     */
+//    public function buildByTeamCount($count)
+//    {
+//        return [];
+//    }
 
     public function setPersonRepository(PersonRepository $personRepository)
     {

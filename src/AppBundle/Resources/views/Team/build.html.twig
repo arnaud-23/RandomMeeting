@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Build Random Team{% endblock %}
+
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <h1>Welcome to the Random Team builder</h1>
+
+
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+
+        <a href="{{ path('rm_site_home') }}">go back to home</a>
+    </div>
+{% endblock %}
