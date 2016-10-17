@@ -3,30 +3,44 @@
 {% block title %}Add People{% endblock %}
 
 {% block body %}
-    <h1>Welcome to the list People page</h1>
-
-    <a href="{{ path('rm_people_add') }}">
-        <button>Add new</button>
-    </a>
-
-    <table>
-        <tr>
-            <td>id</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Email</td>
-        </tr>
-        {% for person in people %}
+    <div class="row">
+        <h1 class="col-md-12">Welcome to the list People page</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ path('rm_people_add') }}" class="btn btn-default" role="button">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-striped">
             <tr>
-                <td>{{ person.id }}</td>
-                <td>{{ person.firstName }}</td>
-                <td>{{ person.lastName }}</td>
-                <td>{{ person.email }}</td>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th class="hidden-xs">Email</th>
+                <th>Action</th>
             </tr>
-        {% endfor %}
-    </table>
-
-    <a href="{{ path('rm_people_add') }}">
-        <button>Add new</button>
-    </a>
+            {% for person in people %}
+                <tr>
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.firstName }}</td>
+                    <td>{{ person.lastName }}</td>
+                    <td class="hidden-xs">{{ person.email }}</td>
+                    <td>
+                        <a href="{{ path('rm_people_search_buddies', {'id': person.id}) }}"
+                           class="btn btn-primary btn-xs" role="button">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search buddies
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="row">
+        <a href="{{ path('rm_people_add') }}" class="btn btn-default" role="button">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new
+        </a>
+    </div>
 {% endblock %}

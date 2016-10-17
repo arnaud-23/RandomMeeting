@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Search Buddies{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1>Hi {{ person.firstName }} this is your Buddies</h1>
+
+        <a href="{{ path('rm_people_search_buddies', {'id': person.id}) }}" class="btn btn-default" role="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search new
+        </a>
+
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th class="hidden-xs">Email</th>
+            </tr>
+            {% for buddy in buddies %}
+                <tr>
+                    <td>{{ buddy.id }}</td>
+                    <td>{{ buddy.firstName }}</td>
+                    <td>{{ buddy.lastName }}</td>
+                    <td class="hidden-xs">{{ buddy.email }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{{ path('rm_people_search_buddies', {'id': person.id}) }}" class="btn btn-default" role="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search new
+        </a>
+    </div>
+{% endblock %}

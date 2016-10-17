@@ -2,11 +2,16 @@
 
 {% block title %}Add People{% endblock %}
 
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
 {% block body %}
-    <h1>Welcome to the Add People page</h1>
+    <div class="row">
+        <h1>Welcome to the Add People page</h1>
 
-    {{ form_start(form) }}
-    {{ form_end(form) }}
 
-    <a href="{{ path('rm_people_list') }}">go back to the list</a>
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+
+        <a href="{{ path('rm_people_list') }}">go back to the list</a>
+    </div>
 {% endblock %}

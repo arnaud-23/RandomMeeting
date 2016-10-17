@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository\People;
 
+use AppBundle\Entity\People\Person;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,4 +13,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class PersonRepository extends EntityRepository
 {
+
+    /**
+     * @param Person $person
+     * @param int    $numberOfResult
+     *
+     * @return Person[]
+     */
+    public function findRandomPerson(Person $person, $numberOfResult = 1)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.id != :personId')
+            ->setParameter('personId', $person->getId())
+            ->orderBy('RANDOM()')
+            ->setMaxResults($numberOfResult)
+            ->getQuery()
+            ->getResult();
+    }
 }

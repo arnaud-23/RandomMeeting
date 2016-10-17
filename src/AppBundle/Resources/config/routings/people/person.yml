@@ -5,3 +5,7 @@ rm_people_add:
 rm_people_list:
     path:     /list
     defaults: { _controller: AppBundle:People/ListPerson:list }
+
+rm_people_search_buddies:
+    path:     /{id}/search-buddies
+    defaults: { _controller: AppBundle:People/SearchBuddies:search }
