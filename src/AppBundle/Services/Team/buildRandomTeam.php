@@ -2,7 +2,7 @@
 
 namespace AppBundle\Services\Team;
 
-use AppBundle\Entity\People\Person;
+use AppBundle\Entity\People\PersonImpl;
 use AppBundle\Repository\People\PersonRepository;
 
 /**
@@ -18,22 +18,22 @@ class buildRandomTeam
     /**
      * @param int $count
      *
-     * @return Person[]
+     * @return PersonImpl[]
      */
-    public function buildByMemberCount($count)
+    public function buildByMemberCount($count = 1)
     {
         return $this->personRepository->findRandom($count);
     }
 
-//    /**
-//     * @param int $count
-//     *
-//     * @return Person[]
-//     */
-//    public function buildByTeamCount($count)
-//    {
-//        return [];
-//    }
+    /**
+     * @param int $count
+     *
+     * @return PersonImpl[]
+     */
+    public function buildByTeamCount($count = 1)
+    {
+        return [];
+    }
 
     public function setPersonRepository(PersonRepository $personRepository)
     {

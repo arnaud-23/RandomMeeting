@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller\People;
 
-use AppBundle\Entity\People\Person;
+use AppBundle\Entity\People\PersonImpl;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ListPersonController extends Controller
@@ -15,12 +15,12 @@ class ListPersonController extends Controller
     }
 
     /**
-     * @return \AppBundle\Entity\People\Person[]|array
+     * @return \AppBundle\Entity\People\PersonImpl[]|array
      */
     private function getPeople()
     {
         $entityManager    = $this->getDoctrine()->getManager();
-        $personRepository = $entityManager->getRepository(Person::class);
+        $personRepository = $entityManager->getRepository(PersonImpl::class);
 
         return $personRepository->findAll();
     }

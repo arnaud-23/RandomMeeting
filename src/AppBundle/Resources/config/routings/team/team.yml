@@ -1,3 +1,7 @@
-rm_team_build_random:
-    path:     /build-random
-    defaults: { _controller: AppBundle:Team/BuildRandomTeam:build }
+rm_team_create:
+    path:     /new
+    defaults: { _controller: AppBundle:Teams/CreateTeam:create }
+
+rm_team_list:
+    path:     /
+    defaults: { _controller: AppBundle:Teams/ListTeam:list }

@@ -1,6 +1,6 @@
-rm_people_add:
-    path:     /add
-    defaults: { _controller: AppBundle:People/AddPerson:add }
+app_people_create:
+    path:     /new
+    defaults: { _controller: AppBundle:People/CreatePerson:create }
 
 rm_people_list:
     path:     /list

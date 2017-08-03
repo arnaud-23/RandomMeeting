@@ -13,12 +13,12 @@ class Buddy
     private $id;
 
     /**
-     * @var Person
+     * @var PersonImpl
      */
     private $person;
 
     /**
-     * @var Person
+     * @var PersonImpl
      */
     private $buddy;
 
@@ -32,7 +32,7 @@ class Buddy
     }
 
     /**
-     * @return Person
+     * @return PersonImpl
      */
     public function getPerson()
     {
@@ -42,7 +42,7 @@ class Buddy
     /**
      * @return Buddy
      */
-    public function setPerson(Person $person)
+    public function setPerson(PersonImpl $person)
     {
         $this->person = $person;
 
@@ -50,7 +50,7 @@ class Buddy
     }
 
     /**
-     * @return Person
+     * @return PersonImpl
      */
     public function getBuddy()
     {
@@ -60,7 +60,7 @@ class Buddy
     /**
      * @return Buddy
      */
-    public function setBuddy(Person $buddy)
+    public function setBuddy(PersonImpl $buddy)
     {
         $this->buddy = $buddy;
 

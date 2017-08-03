@@ -1,0 +1,49 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}List Team{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1 class="col-md-12">Welcome to the list Team page</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ path('rm_site_home') }}">HomePage</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ path('rm_team_create') }}" class="btn btn-default" role="button">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create new
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                </tr>
+                {% for team in teams %}
+                    <tr>
+                        <td>{{ team.id }}</td>
+                        <td>{{ team.name }}</td>
+                        <td>{{ team.position }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ path('rm_team_create') }}" class="btn btn-default" role="button">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create new
+            </a>
+        </div>
+    </div>
+{% endblock %}

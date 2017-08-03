@@ -2,7 +2,7 @@
 
 namespace AppBundle\Services\People;
 
-use AppBundle\Entity\People\Person;
+use AppBundle\Entity\People\PersonImpl;
 use AppBundle\Repository\People\PersonRepository;
 
 /**
@@ -16,12 +16,12 @@ class GetBuddies
     private $personRepository;
 
     /**
-     * @param Person $person
-     * @param int    $number
+     * @param PersonImpl $person
+     * @param int        $number
      *
-     * @return Person[]
+     * @return PersonImpl[]
      */
-    public function getRandom(Person $person, $number = 1)
+    public function getRandom(PersonImpl $person, $number = 1)
     {
         return $this->personRepository->findRandomWithPerson($person, $number);
     }

@@ -4,21 +4,26 @@
            xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <services>
-        <service id="app.repository.people.person" class="AppBundle\Repository\People\PersonRepository">
-            <factory service="doctrine.orm.entity_manager" method="getRepository" />
-            <argument>AppBundle\Entity\People\Person</argument>
-        </service>
+    <imports>
+        <import resource="services/entities/people.xml" />
 
+        <import resource="services/gateways/people.xml" />
+
+        <import resource="services/requestors/people.xml" />
+
+        <import resource="services/useCases/people.xml" />
+    </imports>
+
+    <services>
         <service id="app.services.people.get_buddies" class="AppBundle\Services\People\GetBuddies">
             <call method="setPersonRepository">
-                <argument type="service" id="app.repository.people.person" />
+                <argument type="service" id="app.gateways.people.person" />
             </call>
         </service>
 
         <service id="app.services.team.build_random_team" class="AppBundle\Services\Team\buildRandomTeam">
             <call method="setPersonRepository">
-                <argument type="service" id="app.repository.people.person" />
+                <argument type="service" id="app.gateways.people.person" />
             </call>
         </service>
     </services>

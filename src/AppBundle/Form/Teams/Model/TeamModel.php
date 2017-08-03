@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Form\Team\Model;
+namespace AppBundle\Form\Teams\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -10,10 +10,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 class TeamModel
 {
     /**
-     * @var int
+     * @var string
      *
      * @Assert\NotBlank()
-     * @Assert\GreaterThan(0)
      */
-    public $memberCount;
+    public $name;
+
+    /**
+     * @var int
+     */
+    public $position;
 }

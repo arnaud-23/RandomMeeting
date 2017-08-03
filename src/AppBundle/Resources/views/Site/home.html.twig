@@ -4,11 +4,11 @@
 
 {% block body %}
     <div class="row">
-        <h1>RandomMeeting</h1>
+        <h1 class="col-md-12">Welcome to the RandomMeeting App</h1>
 
-        <ul>
-            <li><a href="{{ path('rm_people_list') }}">List of people</a></li>
-            <li><a href="{{ path('rm_team_build_random') }}">Build random Team</a></li>
-        </ul>
+        <div class="list-group">
+            <a href="{{ path('rm_people_list') }}" class="list-group-item active">List of People</a>
+            <a href="{{ path('rm_team_list') }}" class="list-group-item">list of Team</a>
+        </div>
     </div>
 {% endblock %}

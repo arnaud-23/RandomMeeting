@@ -1,11 +1,12 @@
 <?php
 
-namespace AppBundle\Form\Team\Type;
+namespace AppBundle\Form\Teams\Type;
 
-use AppBundle\Form\Team\Model\TeamModel;
+use AppBundle\Form\Teams\Model\TeamModel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,8 +21,9 @@ class TeamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('memberCount', NumberType::class)
-            ->add('build', SubmitType::class);
+            ->add('name', TextType::class)
+            ->add('position', NumberType::class)
+            ->add('create', SubmitType::class);
     }
 
     /**

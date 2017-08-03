@@ -13,7 +13,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Doubles\\": "tests/Doubles/"
         }
     },
     "require": {
@@ -22,6 +23,10 @@
         "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
+        "openclassrooms/cache": "1.0.x@dev",
+        "openclassrooms/cache-bundle": "1.0.x@dev",
+        "openclassrooms/use-case": "1.0.x@dev",
+        "openclassrooms/use-case-bundle": "1.0.x@dev",
         "symfony/swiftmailer-bundle": "^2.3",
         "symfony/monolog-bundle": "^2.8",
         "symfony/polyfill-apcu": "^1.0",
@@ -31,7 +36,8 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "phpunit/phpunit": "~6.2",
+        "symfony/phpunit-bridge": "^3.1"
     },
     "scripts": {
         "symfony-scripts": [
